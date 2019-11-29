@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>Apa itu Lazy Loading? Pengertian Lazy Loading</title>
+<!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>Apa itu Lazy Loading? Pengertian Lazy Loading - Vin’s Blog</title>
+<meta property="og:title" content="Apa itu Lazy Loading? Pengertian Lazy Loading" />
+<meta name="description" content="Lazy loading adalah sebuah konsep dimana kita menunda pemanggilan (load) sebuah objek sampai di saat kita memang membutuhkannya. Dengan kata lain lazy loading menunda pemanggilan objek ketika objek masih belum dibutuhkan." />
+<meta property="og:description" content="Lazy loading adalah sebuah konsep dimana kita menunda pemanggilan (load) sebuah objek sampai di saat kita memang membutuhkannya. Dengan kata lain lazy loading menunda pemanggilan objek ketika objek masih belum dibutuhkan." />
+<link rel="canonical" href="http://localhost:4000/apa-itu-lazy-loading-pengertian-lazy-loading/" />
+<meta property="og:url" content="http://localhost:4000/apa-itu-lazy-loading-pengertian-lazy-loading/" />
+<meta property="og:site_name" content="Vin’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-08-31T19:19:00+07:00" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "Apa itu Lazy Loading? Pengertian Lazy Loading",
+"datePublished": "2015-08-31T19:19:00+07:00",
+"description": "Lazy loading adalah sebuah konsep dimana kita menunda pemanggilan (load) sebuah objek sampai di saat kita memang membutuhkannya. Dengan kata lain lazy loading menunda pemanggilan objek ketika objek masih belum dibutuhkan.",
+"url": "http://localhost:4000/apa-itu-lazy-loading-pengertian-lazy-loading/"}</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+	<main class="container">
+		<section class="about">
+			<img src="/assets/portfolio.png" alt="Arifin">
+			<h2>Arifin</h2>
+			<p class="tagline">Software Engineer</p>
+			<ul class="social"><a href="https://github.com/vynhart"><li><i class="icon-github-circled"></i></li></a><a href="https://www.linkedin.com/in/vynhart"><li><i class="icon-linkedin-squared"></i></li></a><a href="https://twitter.com/vynhart"><li><i class="icon-twitter-squared"></i></li></a></ul>
+			<p>&copy; 2019</p>
+		</section>
+		<section class="content">
+			<div class="post-container">
+  <a class="post-link" href="/apa-itu-lazy-loading-pengertian-lazy-loading/">
+    <h2 class="post-title">Apa itu Lazy Loading? Pengertian Lazy Loading</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-categories"><li>technology</li></ul>
+    <div class="post-date"><i class="icon-calendar"></i>Aug 31, 2015</div>
+  </div>
+  <div class="post">
+    <p>Lazy loading adalah sebuah konsep dimana kita menunda pemanggilan (load) sebuah objek sampai di saat kita memang membutuhkannya. Dengan kata lain lazy loading menunda pemanggilan objek ketika objek masih belum dibutuhkan.</p>
+
+<p><img src="/images/lazy-cat.jpg" alt="Lazy Cat on Computer" /></p>
+
+<p>Sebagai contoh seandainya kita memiliki class Customer dan Costumer memiliki banyak objek Order di dalamnya. Perhatikan bagian konstruktor pada class Costumer, dimana ketika objek Costumer dibuat, aplikasi juga membuat objek Order pada waktu yang sama. Sehingga meskipun kita tidak memerlukan objek Order, objek ini tetap dibuat. Proses seperti ini, berlawanan dengan <em>Lazy Loading</em>, disebut dengan <em>Eager Loading</em>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class Customer
+{
+  private List&lt;Order&gt; _Orders= null;
+  …
+  …
+  public Customer()
+  {
+        _CustomerName = "Shiv";
+        _Orders = LoadOrders(); // Loads the order object even though //not needed
+  }
+
+  private List&lt;Order&gt; LoadOrders()
+  {
+        List&lt;Order&gt; temp = new List&lt;Order&gt;();
+        Order o = new Order();
+        o.OrderNumber = "ord1001";
+        temp.Add(o);
+        o = new Order();
+        o.OrderNumber = "ord1002";
+        temp.Add(o);
+        return temp;
+  }
+}
+</code></pre></div></div>
+
+<h2 id="implementasi-lazy-loading">Implementasi Lazy Loading</h2>
+
+<p>Untuk mengimplementasikan Lazy Loading ke dalam kode diatas, kita dapat melakukan perubahan berikut:</p>
+
+<ol>
+  <li>Hapus load objek Order pada konstruktor</li>
+  <li>Pada pengambilan properti order pada objek yang telah dibuat, lakukan pengecekan: jika property order masih kosong, maka lakukan pengambilan data.</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class Customer
+{
+    private List&lt;Order&gt; _Orders= null;
+    …
+    …
+    public Customer()
+    {
+        _CustomerName = "Shiv";
+    }
+    public List&lt;Order&gt; Orders
+    {
+      get
+        {
+            if (_Orders == null)
+            {
+                _Orders = LoadOrders();
+            }
+            return _Orders;
+        }
+    }
+</code></pre></div></div>
+
+<h2 id="keuntungan-dan-kerugian-menggunakan-lazy-loading">Keuntungan dan kerugian menggunakan lazy loading</h2>
+
+<p>Keuntungan menggunakan lazy loading yaitu:</p>
+
+<ol>
+  <li>Meminimilasi waktu start up aplikasi</li>
+  <li>Aplikasi membutuhkan memory yang lebih sedikit karena objek hanya di load ketika dibutuhkan.</li>
+  <li>Pemanggilan Query database yang tidak diperlukan dapat dihindari.</li>
+</ol>
+
+<p>Kerugian menggunakan lazy loading hanyalah kode program jadi sedikit lebih rumit, dan membutuhkan sedikit proses ketika pengecekan property, tapi keuntungan yang diberikan jauh lebih besar daripada kerugiannya.</p>
+
+<p>Semoga bermanfaat</p>
+
+  </div></div>
+
+		</section>
+	</main></body>
+</html>
