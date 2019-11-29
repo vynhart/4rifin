@@ -2,7 +2,7 @@
 layout: post
 title:  "My CSS Self note"
 categories: css
-date:   2016-08-20 17:52:38 +0700
+date:   2019-11-24 21:40:00 +0700
 permalink: css-self-note/
 ---
 
