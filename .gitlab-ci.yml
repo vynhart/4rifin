@@ -3,7 +3,7 @@ image: ruby:2.5
 pages:
   script:
   - bundle install
-  - bundle exec jekyll build -d public
+  - env LANG="en_US.UTF-8" bundle exec jekyll build -d public
   artifacts:
     paths:
       - public
