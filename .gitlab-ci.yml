@@ -4,6 +4,7 @@ before_script:
  - apt-get update -qq && apt-get install -y -qq sshpass
 
 build:
+  stage: build
   script:
   - bundle install
   - env LANG="en_US.UTF-8" bundle exec jekyll build -d public
@@ -12,6 +13,7 @@ build:
       - public
 
 deploy:
+  stage: deploy
   script:
   - sshpass -V
   - export SSHPASS=$USER_PASS
