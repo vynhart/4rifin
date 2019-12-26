@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>Solusi CodeIgniter tidak dapat upload filetype pdf. Error: The filetype you are attempting to upload is not allowed</title>
+<!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>Solusi CodeIgniter tidak dapat upload filetype pdf. Error: The filetype you are attempting to upload is not allowed - Vin’s Blog</title>
+<meta property="og:title" content="Solusi CodeIgniter tidak dapat upload filetype pdf. Error: The filetype you are attempting to upload is not allowed" />
+<meta name="description" content="Setelah menelusuri web untuk mencari solusi atas permasalahan diatas, berikut saya simpulkan solusinya." />
+<meta property="og:description" content="Setelah menelusuri web untuk mencari solusi atas permasalahan diatas, berikut saya simpulkan solusinya." />
+<link rel="canonical" href="/solusi-codeigniter-tidak-dapat-upload-filetype-pdf-error-the-filetype-you-are-attempting-to-upload-is-not-allowed/" />
+<meta property="og:url" content="/solusi-codeigniter-tidak-dapat-upload-filetype-pdf-error-the-filetype-you-are-attempting-to-upload-is-not-allowed/" />
+<meta property="og:site_name" content="Vin’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2015-09-06T19:19:00+07:00" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "Solusi CodeIgniter tidak dapat upload filetype pdf. Error: The filetype you are attempting to upload is not allowed",
+"datePublished": "2015-09-06T19:19:00+07:00",
+"description": "Setelah menelusuri web untuk mencari solusi atas permasalahan diatas, berikut saya simpulkan solusinya.",
+"url": "/solusi-codeigniter-tidak-dapat-upload-filetype-pdf-error-the-filetype-you-are-attempting-to-upload-is-not-allowed/"}</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+	<main class="container">
+		<section class="about">
+			<img src="/assets/portfolio.png" alt="Arifin">
+			<h2>Arifin</h2>
+			<p class="tagline">Software Engineer</p>
+			<ul class="social"><a href="https://github.com/vynhart"><li><i class="icon-github-circled"></i></li></a><a href="https://www.linkedin.com/in/vynhart"><li><i class="icon-linkedin-squared"></i></li></a><a href="https://twitter.com/vynhart"><li><i class="icon-twitter-squared"></i></li></a></ul>
+			<p>&copy; 2019</p>
+		</section>
+		<section class="content">
+			<div class="post-container">
+  <a class="post-link" href="/solusi-codeigniter-tidak-dapat-upload-filetype-pdf-error-the-filetype-you-are-attempting-to-upload-is-not-allowed/">
+    <h2 class="post-title">Solusi CodeIgniter tidak dapat upload filetype pdf. Error: The filetype you are attempting to upload is not allowed</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-categories"><li>web-development</li></ul>
+    <div class="post-date"><i class="icon-calendar"></i>Sep 6, 2015</div>
+  </div>
+  <div class="post">
+    <p>Setelah menelusuri web untuk mencari solusi atas permasalahan diatas, berikut saya simpulkan solusinya.</p>
+
+<h2 id="penyebab">Penyebab</h2>
+
+<ol>
+  <li>Error tersebut terjadi karena PHP mengenal ekstensi file dengan type nya masing, masing. Tipe file inilah yang menjadi pedoman bagi CodeIgniter dalam menentukan file apa saja yang boleh diupload ke server. Contohnya, untuk file jpg, PHP menerjemahkannya sebagai tipe: image/jpeg. Ekstensi dari masing-masing jenis file ini disimpan di dalam file application/config/mimes.php untuk dijadikan sebagai rujukan file apa saja yang diijinkan untuk diupload ke server.</li>
+  <li>Terjadi perbedaan penafsiran mengenai file pdf antara PHP dengan CodeIgniter, sehingga file yang dikenali PHP terhadap PDF berbeda dengan jenis file yang tersimpan di dalam CodeIgniter</li>
+</ol>
+
+<h2 id="solusi">Solusi</h2>
+
+<p>Pada baris controller dimana anda melakukan proses upload file, anda akan menampilkan error jika file tidak berhasil diupload, yaitu pada baris berikut:<br />
+<code class="highlighter-rouge">echo $this-&gt;upload-&gt;display_errors();</code><br />
+tambahkan baris baru di bawah baris diatas sehingga menjadi seperti berikut:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $this-&gt;upload-&gt;display_errors();
+echo ‘&lt;pre&gt;’;
+print_r($this-&gt;upload-&gt;data());
+echo ‘&lt;/pre&gt;’;
+</code></pre></div></div>
+
+<p>Kemudian, Upload ulang file pdf anda, sekarang website akan menampilkan informasi dari file secara lebih mendetail, pada komputer saya, browser menampilkan data berikut:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The filetype you are attempting to upload is not allowed.
+
+Array
+(
+   [file_name] =&gt; Curriculum Vitae.pdf
+   [file_type] =&gt; application/download
+   [file_path] =&gt; C:/xampp/htdocs/portal/uploads/materi_ajar/RPL/2010/
+   [full_path] =&gt; C:/xampp/htdocs/portal/uploads/materi_ajar/RPL/2010/Curriculum Vitae.pdf
+   [raw_name] =&gt; Curriculum Vitae
+   [orig_name] =&gt;
+   [client_name] =&gt; Curriculum Vitae.pdf
+   [file_ext] =&gt; .pdf
+   [file_size] =&gt; 152639
+   [is_image] =&gt;
+   [image_width] =&gt;
+   [image_height] =&gt;
+   [image_type] =&gt;
+   [image_size_str] =&gt;
+)
+</code></pre></div></div>
+
+<p>Perhatikan baris <em>[file_type] =&gt; application/download</em>,pada baris tersebut PHP mengenali tipe dari file yang kita upload sebagai <code class="highlighter-rouge">application/download</code>. Sekarang bukalah file mimes.php yang berada pada folder <code class="highlighter-rouge">application/config/</code> pada website anda.</p>
+
+<p>Anda dapat lihat bahwa pada baris <code class="highlighter-rouge">key =&gt; value</code> dalam array, pdf tidak memiliki <code class="highlighter-rouge">application/download</code>, pada file saya, baris tersebut berisi: <code class="highlighter-rouge">'pdf' =&gt; array('application/pdf', 'application/x-download')</code>, Agar file pdf yang ingin kita upload dikenali sebagai bagian dari mime pdf pada file, tambahkan application/download pada elemen array diatas, sehingga menjadi:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'pdf' =&gt; array('application/pdf', 'application/x-download', 'application/download')
+</code></pre></div></div>
+<p>Sekarang, coba upload ulang file pdf yang anda inginkan, sekarang seharusnya file dapat diupload dengan lancar. Semoga bermanfaat</p>
+
+  </div></div>
+
+		</section>
+	</main></body>
+</html>

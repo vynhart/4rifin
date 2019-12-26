@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>My Impression on Go Language</title>
+<!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>My Impression on Go Language - Vin’s Blog</title>
+<meta property="og:title" content="My Impression on Go Language" />
+<meta name="description" content="" />
+<meta property="og:description" content="" />
+<link rel="canonical" href="/my-impression-on-go-programming-language/" />
+<meta property="og:url" content="/my-impression-on-go-programming-language/" />
+<meta property="og:site_name" content="Vin’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-08-20T17:52:38+07:00" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "My Impression on Go Language",
+"datePublished": "2016-08-20T17:52:38+07:00",
+"description": "",
+"url": "/my-impression-on-go-programming-language/"}</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+	<main class="container">
+		<section class="about">
+			<img src="/assets/portfolio.png" alt="Arifin">
+			<h2>Arifin</h2>
+			<p class="tagline">Software Engineer</p>
+			<ul class="social"><a href="https://github.com/vynhart"><li><i class="icon-github-circled"></i></li></a><a href="https://www.linkedin.com/in/vynhart"><li><i class="icon-linkedin-squared"></i></li></a><a href="https://twitter.com/vynhart"><li><i class="icon-twitter-squared"></i></li></a></ul>
+			<p>&copy; 2019</p>
+		</section>
+		<section class="content">
+			<div class="post-container">
+  <a class="post-link" href="/my-impression-on-go-programming-language/">
+    <h2 class="post-title">My Impression on Go Language</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-categories"><li>golang</li></ul>
+    <div class="post-date"><i class="icon-calendar"></i>Aug 20, 2016</div>
+  </div>
+  <div class="post">
+    <p><img src="/images/gopher.jpg" alt="Gopher" /></p>
+
+<p>Before I talk about my Impression to code with Go, let me acclaim that I’ve written code on ruby for a year. So I will talk about Ruby first. And hopefully I can get some comparison between these both of types programming language.</p>
+
+<p>Ruby is a beautiful language, it is so expressive that you almost got no obstacle to write your thought to code. Ruby is an interpreter language, you don’t need to compile the code to run it, it will execute your code line by line without compilation to the whole code. This makes the development phase of software become faster.</p>
+
+<p>Ruby too, is a dynamic typing language, means that  you don’t have to explicitly tell ruby what kind of data a variable will store, a variable will store any type of data. No matter it is a number, a string, or another object. In Ruby, everything is object, and for me, that is the one of most beautiful thing about it. You could write a loop like this:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="mi">100</span><span class="p">.</span><span class="nf">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+  <span class="nb">puts</span> <span class="s2">"</span><span class="si">#{</span><span class="n">i</span><span class="si">}</span><span class="s2"> times of Hello World!"</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>100.times ? Oh my god what a beautiful way to tell a computer what to do.</p>
+
+<p>However, on the other side. All of these luxury has cost. Because of ruby is an interpreter language, and it treat anything in code (Really, anything.) as an object, Ruby takes more memory and more resource to process your code.</p>
+
+<p>One day, there comes a time when I had to write a micro service with special purpose to integrating our internal data to external third party system. My CTO told me to try Go or Lua. I chose Go.</p>
+
+<p>So I take time to learn Go, read several article, and watch some video to know why should I use Go? What is good from Go?</p>
+
+<p>Among the reasons, what makes me impressed is that Go have concurrency way of programming -without Thread-. More info about it, <a href="https://www.youtube.com/watch?v=f6kdp27TYZs">watch here</a>. Go is built in a purpose to be like C, not Java nor Ruby. It is optimized in speed because Go will compile your code directly to the native Machine code. Go is like C, but in much way better IMHO. That is, Go has Garbage Collector mechanism so as a programmer you don’t need to be bothered to free all the variables in your code, this avoid you from unnecessary bug.</p>
+
+<p>Go too, has a chain mechanism. Some way to synchronize multiple Thread in another programming language. But in a different, easier, and cheaper way.</p>
+
+<p>Well, I thought it’s a good programming language, the service that I would build will be fast and efficient. So I start to code.</p>
+
+<p>In the first several hours, I immediately feel intimidated with this language. Again, I’ve been played with that beauty of Ruby language for full time in a year. I yelled in my mind, “What an ugly language it is”. But, again. I have to admit, this is the consequence when you get into a compiler language that will compile your code to a machine language.</p>
+
+<p>I spent days to write my micro service, and man, I’m exhausted XD. It’s just so different in many ways, one of the most annoying thing I feel about Go is you have to explicitly handle EVERY SINGLE of errors that might be occurs of a statement call. Moreover, Go is not an OOP Language like ruby, so my mind suddenly have to restructure the mindset like “Oh ok, it is not an object. Well, at least I can make a method to this struct”.</p>
+
+<p>But in my way to write my code in Go, I realize that along with all of the limitation of a compiler language, Go come with a really handy and flexible way to allow you express your code. Something like you can extend a method to a data type by assigning method to it, or about it’s interface mechanism, to wrap your logic to code interface, makes it so flexible to got any third party library in the same interface.</p>
+
+<p>So my last statement is though it’s a bit exhausting to move from an Interpreter and beautiful Language like Ruby to a more native language like Go, I think I’m on the right track to get more knowledge and to be able to write software in Go. And for enterprise class of software, especially when it comes to SAAS (Software As A Service), performance will be a big concern. And Go has capability to be the best choice.</p>
+
+<p>What about your opinion with Go? Feel free to fill in comment below.</p>
+
+<p>Want to jump to learn go right now? Let’s Go.</p>
+
+
+  </div></div>
+
+		</section>
+	</main></body>
+</html>

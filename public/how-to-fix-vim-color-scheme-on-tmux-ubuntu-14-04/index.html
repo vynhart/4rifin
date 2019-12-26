@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>How to fix Vim color scheme on Tmux – Ubuntu 14.04</title>
+<!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>How to fix Vim color scheme on Tmux – Ubuntu 14.04 - Vin’s Blog</title>
+<meta property="og:title" content="How to fix Vim color scheme on Tmux – Ubuntu 14.04" />
+<meta name="description" content="You may experience something wrong with your vim color scheme after you installed TMUX, something like:" />
+<meta property="og:description" content="You may experience something wrong with your vim color scheme after you installed TMUX, something like:" />
+<link rel="canonical" href="/how-to-fix-vim-color-scheme-on-tmux-ubuntu-14-04/" />
+<meta property="og:url" content="/how-to-fix-vim-color-scheme-on-tmux-ubuntu-14-04/" />
+<meta property="og:site_name" content="Vin’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-06-20T17:52:38+07:00" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "How to fix Vim color scheme on Tmux – Ubuntu 14.04",
+"datePublished": "2016-06-20T17:52:38+07:00",
+"description": "You may experience something wrong with your vim color scheme after you installed TMUX, something like:",
+"url": "/how-to-fix-vim-color-scheme-on-tmux-ubuntu-14-04/"}</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+	<main class="container">
+		<section class="about">
+			<img src="/assets/portfolio.png" alt="Arifin">
+			<h2>Arifin</h2>
+			<p class="tagline">Software Engineer</p>
+			<ul class="social"><a href="https://github.com/vynhart"><li><i class="icon-github-circled"></i></li></a><a href="https://www.linkedin.com/in/vynhart"><li><i class="icon-linkedin-squared"></i></li></a><a href="https://twitter.com/vynhart"><li><i class="icon-twitter-squared"></i></li></a></ul>
+			<p>&copy; 2019</p>
+		</section>
+		<section class="content">
+			<div class="post-container">
+  <a class="post-link" href="/how-to-fix-vim-color-scheme-on-tmux-ubuntu-14-04/">
+    <h2 class="post-title">How to fix Vim color scheme on Tmux – Ubuntu 14.04</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-categories"><li>vim</li></ul>
+    <div class="post-date"><i class="icon-calendar"></i>Jun 20, 2016</div>
+  </div>
+  <div class="post">
+    <p>You may experience something wrong with your vim color scheme after you installed TMUX, something like:</p>
+
+<p><img src="/images/vim_tmux_screenshot.png" alt="Vim Tmux Screenshot" /></p>
+
+<p>TMUX really wants the terminal set to screen, not xterm.<br />
+to fix this, simply add this line to your ~/.bashrc file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export TERM="screen-256color"
+</code></pre></div></div>
+
+<p>to make sure you’re doing it properly, login to TMUX and type the command below:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo $TERM
+</code></pre></div></div>
+
+<p>if terminal show you “screen-256color” then everything should be fine.
+you can start your vim now.</p>
+
+  </div></div>
+
+		</section>
+	</main></body>
+</html>

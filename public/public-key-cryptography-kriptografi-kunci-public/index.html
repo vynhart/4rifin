@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>Public Key Cryptography (Kriptografi Kunci Public)</title>
+<!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>Public Key Cryptography (Kriptografi Kunci Public) - Vin’s Blog</title>
+<meta property="og:title" content="Public Key Cryptography (Kriptografi Kunci Public)" />
+<meta name="description" content="" />
+<meta property="og:description" content="" />
+<link rel="canonical" href="/public-key-cryptography-kriptografi-kunci-public/" />
+<meta property="og:url" content="/public-key-cryptography-kriptografi-kunci-public/" />
+<meta property="og:site_name" content="Vin’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2014-10-04T19:19:00+07:00" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "Public Key Cryptography (Kriptografi Kunci Public)",
+"datePublished": "2014-10-04T19:19:00+07:00",
+"description": "",
+"url": "/public-key-cryptography-kriptografi-kunci-public/"}</script>
+<!-- End Jekyll SEO tag -->
+</head>
+<body>
+	<main class="container">
+		<section class="about">
+			<img src="/assets/portfolio.png" alt="Arifin">
+			<h2>Arifin</h2>
+			<p class="tagline">Software Engineer</p>
+			<ul class="social"><a href="https://github.com/vynhart"><li><i class="icon-github-circled"></i></li></a><a href="https://www.linkedin.com/in/vynhart"><li><i class="icon-linkedin-squared"></i></li></a><a href="https://twitter.com/vynhart"><li><i class="icon-twitter-squared"></i></li></a></ul>
+			<p>&copy; 2019</p>
+		</section>
+		<section class="content">
+			<div class="post-container">
+  <a class="post-link" href="/public-key-cryptography-kriptografi-kunci-public/">
+    <h2 class="post-title">Public Key Cryptography (Kriptografi Kunci Public)</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-categories"><li>kriptografi</li></ul>
+    <div class="post-date"><i class="icon-calendar"></i>Oct 4, 2014</div>
+  </div>
+  <div class="post">
+    <p><img src="/images/xml-logo.png" alt="XML Logo" /></p>
+
+<p>Public Key Cryptography atau uga disebut Assymetric cryptography. adalah sebuah jenis algoritma kriptografi dengan dua kunci yaitu kunci private (yang dirahasiakan) dan kunci publik (yang didistribusikan kepada siapapun yang membutuhkan). Public Key akan digunakan untuk mengenkripsi pesan, dan private key akan digunakan untuk mendekripsi pesan. Istilah Assymetric diambil dari berbedanya kunci untuk mengenkripsi dan mendekripsikan pesan, berbeda dengan kriptografi simetris yang menggunakan kunci yang sama untuk mengenkripsi dan mendekripsi pesan.</p>
+
+<p>Kriptografi kunci publik diciptakan dari permasalahan sulitnya / berbahayanya distribusi kunci yang ada pada jenis kriptografi simetris. Pada kriptografi kunci publik, pemilik kunci private tidak perlu khawatir kunci publik yang digunakan untuk mengenkripsi pesan diketahui oleh siapapun, karena pesan yang telah dienkripsi, tidak akan bisa didekripsi jika tidak menggunakan kunci private yang hanya dimiliki si pembuat kunci. Asumsi pada kriptografi ini adalah kunci private tidak akan bisa (secara komputasi tidak mungkin) ditemukan berdasarkan kunci publik yang didistribusikan sehingga keamanan pesan yang dikirim terjamin sekalipun dalam pengiriman pesan ada man in the middle selama kunci private tidak diketahui oleh orang lain.</p>
+
+<h2 id="cara-kerja-kriptografi-kunci-publik">Cara kerja kriptografi kunci publik</h2>
+
+<p>Berikut adalah gambaran bagaimana kriptografi kunci publik bekerja:</p>
+
+<p><img src="/images/public-key-cryptography.png" alt="Public Key Cryptography" /></p>
+
+<p>Tahap pertama, seperti pada gambar diatas, Alice akan membuat kunci public dan kunci private. Lalu Alice akan memberikan kunci public pada siapapun yang memerlukan untuk mengenkripsi pesan dan ditujukan kepada Alice.</p>
+
+<p>Tahap kedua, Bob telah menerima kunci public yang dikirimkan oleh Alice (dimana siapapun boleh menerimanya), lalu Bob mengenkripsi pesan dengan kunci public tersebut lalu mengirimkannya pada Alice. Pesan yang telah dienkripsi tidak perlu dikhawatirkan untuk ketahuan / bocor kepada pihak lain karena tidak ada satupun pihak yang akan mampu memecahkan pesan yang telah dienkripsi tanpa kunci private yang hanya dimiliki oleh Alice.</p>
+
+<p>Alice menerima pesan yang telah dienkripsi (disebut ciphertext) yang dikirimkan Bob, lalu mendekripsi pesan tersebut ke plaintext awal.</p>
+
+  </div></div>
+
+		</section>
+	</main></body>
+</html>

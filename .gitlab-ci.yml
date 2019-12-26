@@ -1,9 +1,15 @@
 image: ruby:2.5
 
-pages:
+build:
   script:
   - bundle install
   - env LANG="en_US.UTF-8" bundle exec jekyll build -d public
   artifacts:
     paths:
       - public
+
+deploy:
+  script:
+  - sshpass -V
+  - export SSHPASS=$USER_PASS
+  - sshpass -e scp -o stricthostkeychecking=no -r public/ vyn@139.59.100.22:/var/www/4rifin/current/_site/
