@@ -1,5 +1,8 @@
 image: ruby:2.5
 
+before_script:
+ - apt-get update -qq && apt-get install -y -qq sshpass
+
 build:
   script:
   - bundle install
