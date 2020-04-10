@@ -1,5 +1,12 @@
 build:
 	bundle exec jekyll b
 
-deploy: build
+commit: build
+	git add .
+	git commit -m 'release'
+
+push: commit
+	git push origin master
+
+deploy: push
 	bundle exec cap production deploy
