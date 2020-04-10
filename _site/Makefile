@@ -1,3 +1,5 @@
-deploy:
-		bundle exec jekyll b
-		bundle exec cap production deploy
+build:
+	bundle exec jekyll b
+
+deploy: build
+	bundle exec cap production deploy
