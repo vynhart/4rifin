@@ -2,7 +2,7 @@
 layout: post
 title:  "Do you know what is GRUB stands for?"
 categories: linux
-date:   2020-04-10 21:40:00 +0700
+date:   2020-04-10 19:00:00 +0700
 permalink: /grub-stands-for/
 ---
 
