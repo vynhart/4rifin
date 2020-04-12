@@ -18,7 +18,7 @@ Sebagian yang lain dengan penuh kesadaran membatasi dirinya dari nafsu yang tida
 orang-orang ini dengan sengaja 'memenjarakan' dirinya dalam batas-batas tertentu untuk menjaga
 agar dirinya dapat 'terbebas' dari penjara nafsu.
 
-Manusia manusia sendiri selamanya tak akan pernah 'terbebas' dari kebutuhan-kebutuhan
+Kehidupan manusia sendiri selamanya tak akan pernah 'terbebas' dari kebutuhan-kebutuhan
 dasarnya untuk bernafas, makan dan minum.
 
 Maka sesungguhnya hidup ini sendiri pada hakikatnya penjara, tidak pernah ada kebebasan mutlak.
