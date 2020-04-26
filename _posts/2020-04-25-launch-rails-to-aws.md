@@ -32,16 +32,62 @@ if the version of ruby match with one you needed, then you can just install it w
 sudo apt-get install ruby
 ```
 
-but if the version doesn't match what you need and you need the latest version of ruby, you can install it via snap:
+but if the version doesn't match what you need, you should install it via ruby version manager. Continue to the next section.
 
-## Install ruby via debian package manager (apt-get)
-To install ruby via snap, run:
+## Install rbenv
+rbenv is a version manager for ruby. To install it, follow this steps:
+
+Install the necessary package to compile ruby:
 
 ```
-sudo snap install ruby
+$ sudo apt install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev 
 ```
 
-Now you should have ruby installed in your machine
+Clone rbenv to ~/.rbenv
+
+```
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+```
+ 
+add rbenv/bin into the front of your PATH
+
+```
+$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+$ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+```
+
+Install ruby-build plugin
+
+```
+$ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+```
+
+Now you should be able to see the available ruby version to be installed, run:
+
+```
+$ rbenv install -l
+```
+
+The output of that command should show you the list of ruby versions that you can install.
+
+Now, install ruby. For example, I want to install ruby version 2.6.6
+
+```
+$ rbenv install 2.6.6
+```
+
+Set it as our default version of ruby:
+
+```
+$ rbenv global 2.5.1
+```
+
+# Install bundler
+At this point you should have ruby installed in your EC2. Now install bundler:
+
+```
+$ gem install bundler
+```
 
 # Install nginx
 To install nginx, just run:

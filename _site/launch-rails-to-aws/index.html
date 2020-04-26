@@ -81,15 +81,54 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install ruby
 </code></pre></div></div>
 
-<p>but if the version doesn’t match what you need and you need the latest version of ruby, you can install it via snap:</p>
+<p>but if the version doesn’t match what you need, you should install it via ruby version manager. Continue to the next section.</p>
 
-<h2 id="install-ruby-via-debian-package-manager-apt-get-1">Install ruby via debian package manager (apt-get)</h2>
-<p>To install ruby via snap, run:</p>
+<h2 id="install-rbenv">Install rbenv</h2>
+<p>rbenv is a version manager for ruby. To install it, follow this steps:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo snap install ruby
+<p>Install the necessary package to compile ruby:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev 
 </code></pre></div></div>
 
-<p>Now you should have ruby installed in your machine</p>
+<p>Clone rbenv to ~/.rbenv</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+</code></pre></div></div>
+
+<p>add rbenv/bin into the front of your PATH</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bashrc
+$ echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bashrc
+</code></pre></div></div>
+
+<p>Install ruby-build plugin</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+</code></pre></div></div>
+
+<p>Now you should be able to see the available ruby version to be installed, run:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rbenv install -l
+</code></pre></div></div>
+
+<p>The output of that command should show you the list of ruby versions that you can install.</p>
+
+<p>Now, install ruby. For example, I want to install ruby version 2.6.6</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rbenv install 2.6.6
+</code></pre></div></div>
+
+<p>Set it as our default version of ruby:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ rbenv global 2.5.1
+</code></pre></div></div>
+
+<h1 id="install-bundler">Install bundler</h1>
+<p>At this point you should have ruby installed in your EC2. Now install bundler:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ gem install bundler
+</code></pre></div></div>
 
 <h1 id="install-nginx">Install nginx</h1>
 <p>To install nginx, just run:</p>
