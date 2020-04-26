@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-28846418-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-28846418-3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>Launching a rails application on AWS</title>
+<!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>Launching a rails application on AWS - Vin’s Blog</title>
+<meta property="og:title" content="Launching a rails application on AWS" />
+<meta name="description" content="Here’s the steps to launch an empty Rails app to AWS. By the end of the steps you should see Rails home page on the domain of your compute instance in aws." />
+<meta property="og:description" content="Here’s the steps to launch an empty Rails app to AWS. By the end of the steps you should see Rails home page on the domain of your compute instance in aws." />
+<link rel="canonical" href="/launch-rails-to-aws/" />
+<meta property="og:url" content="/launch-rails-to-aws/" />
+<meta property="og:site_name" content="Vin’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-25T19:00:00+07:00" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "Launching a rails application on AWS",
+"datePublished": "2020-04-25T19:00:00+07:00",
+"description": "Here’s the steps to launch an empty Rails app to AWS. By the end of the steps you should see Rails home page on the domain of your compute instance in aws.",
+"url": "/launch-rails-to-aws/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+	<main class="container">
+		<section class="about">
+			<img src="/assets/portfolio.png" alt="Arifin">
+			<h2>Arifin</h2>
+			<p class="tagline">Software Engineer</p>
+			<ul class="social"><a href="https://github.com/vynhart"><li><i class="icon-github-circled"></i></li></a><a href="https://www.linkedin.com/in/vynhart"><li><i class="icon-linkedin-squared"></i></li></a><a href="https://twitter.com/vynhart"><li><i class="icon-twitter-squared"></i></li></a></ul>
+			<p>&copy; 2019</p>
+		</section>
+		<section class="content">
+			<div class="post-container">
+  <a class="post-link" href="/launch-rails-to-aws/">
+    <h2 class="post-title">Launching a rails application on AWS</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-categories"><li>rails</li></ul>
+    <div class="post-date"><i class="icon-calendar"></i>Apr 25, 2020</div>
+  </div>
+  <div class="post">
+    <p>Here’s the steps to launch an empty Rails app to AWS. By the end of the steps you should see Rails home page on the domain of your compute instance in aws.</p>
+
+<h1 id="launch-an-ec2-instance">Launch an EC2 instance</h1>
+<p>AWS EC2 is a virtual server instance in which you’ll deploy your Rails app, to launch it follow this steps:</p>
+
+<ol>
+  <li>Logged in to your aws console, go to console.aws.amazon.com/ec2/</li>
+  <li>Launch an EC2 instance. Choose ubuntu server as AMI (Amazon Machine Image)</li>
+  <li>Choose a key pair to access the new instance, if this is your first time of creating a new EC2 instance, just select “Create a new key pair” and klik “Download Key Pair”.You’ll get an <code class="highlighter-rouge">instance-name.pem</code> key to be used to connect to your new EC2 later, download and save it to the computer.</li>
+  <li>Wait until the new EC2 instance is created</li>
+  <li>After it’s created, go to your EC2 dashboard and click “Connect” it will give you guidance about how to connect to your new instance. Simply said, you need to use the key you get from step-3 to connect to your new instance via SSH. It will looked to something similar to this: “ssh -i “instance-name.pem” ubuntu@ec2-18-144-71-537.ap-southeast-1.compute.amazonaws.com”, follow the steps and connect to your new EC2 instance via ssh.</li>
+</ol>
+
+<h1 id="install-ruby">Install ruby</h1>
+<p>After you successfully logged in to your newly created EC2 instance via ssh, now you can install ruby in order to run your rails app.</p>
+
+<h2 id="install-ruby-via-debian-package-manager-apt-get">Install ruby via debian package manager (apt-get)</h2>
+<p>You can install ruby via debian repository, but usually the version of ruby that will be available in the repository will not be the latest. To check the version of ruby that you will install, run</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-cache policy ruby
+</code></pre></div></div>
+
+<p>if the version of ruby match with one you needed, then you can just install it with:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install ruby
+</code></pre></div></div>
+
+<p>but if the version doesn’t match what you need and you need the latest version of ruby, you can install it via snap:</p>
+
+<h2 id="install-ruby-via-debian-package-manager-apt-get-1">Install ruby via debian package manager (apt-get)</h2>
+<p>To install ruby via snap, run:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo snap install ruby
+</code></pre></div></div>
+
+<p>Now you should have ruby installed in your machine</p>
+
+<h1 id="install-nginx">Install nginx</h1>
+<p>To install nginx, just run:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install nginx
+</code></pre></div></div>
+
+<p>to see if you’re successfully install nginx, run:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl localhost
+</code></pre></div></div>
+
+<p>you should see html response from nginx.</p>
+
+<h1 id="enable-https-traffic-to-your-ec2-instance">Enable HTTPS traffic to your EC2 instance</h1>
+<p>To allow your EC2 instance receive traffic from the internet, you need to add HTTPS as an allowed inbound traffic in
+your <strong>Security Group</strong>.</p>
+
+<p>To do that:</p>
+
+<ol>
+  <li>Open your EC2 dashboard, click on Instances menu. You will see the list of your EC2 instance in the table.</li>
+  <li>On the line of your EC2 instance scroll to right until you see column <code class="highlighter-rouge">Security Groups</code>, in my case it will contain value of ‘launch-wizard-1’.
+Click it and you will be redirected to Security Groups dashboard.</li>
+  <li>On the security group table, click the link on the ID column of security group that has name matching with the Security Group of your EC2 (in my case ‘launch-wizard-1’</li>
+  <li>You will see three tabs on the bottom half on the dashboard showing: Inbound rules, Outbound rules, and Tags. Click on Inbound rules</li>
+  <li>Click ‘Edit inbound rules’, you will be redirected to Edit inbound rules dashboard, click ‘Add Rule’ and choose HTTPS. Repeat the process to add HTTP.</li>
+  <li>Click save rules</li>
+</ol>
+
+<p>Now your EC2 instance will receive the internet traffic coming into port 80 (http) and 443 (https).
+If you enter the domain of your EC2 instance in browser with http (instead of https) you should now see an nginx welcome page.</p>
+
+<h1 id="setup-ssl-certificate-to-your-domain-with-lets-encrypt">Setup SSL certificate to your domain with Let’s Encrypt</h1>
+<p><a href="https://letsencrypt.org/getting-started/">Let’s encrypt</a> is a Certificate Authority that gives you a free certificate.
+<a href="https://certbot.eff.org/">Certbot</a> is a client that can automate the process to obtains this certificate.
+Visit the website and input your system stack.
+If you use the same stack with this tutorial (ubuntu and nginx) then you should be directed to <a href="https://certbot.eff.org/lets-encrypt/ubuntubionic-nginx">this page</a></p>
+
+<p>Follow the instruction to install the certbot client and run the certbot command to automatically get the certificate.</p>
+
+<h1 id="upload-your-rails-code-to-ec2">Upload your Rails code to EC2</h1>
+<p>It’s up to you how you upload the code to your EC2 instance, I myself prefer to use deployment automation by using
+<a href="https://capistranorb.com/">Capistrano</a>.</p>
+
+  </div></div>
+
+		</section>
+	</main>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-28846418-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-28846418-3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>Wireless card into monitor mode</title>
+<!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>Wireless card into monitor mode - Vin’s Blog</title>
+<meta property="og:title" content="Wireless card into monitor mode" />
+<meta name="description" content="Check the name of your wireless card by running command:" />
+<meta property="og:description" content="Check the name of your wireless card by running command:" />
+<link rel="canonical" href="/wireless-card-into-monitor-mode/" />
+<meta property="og:url" content="/wireless-card-into-monitor-mode/" />
+<meta property="og:site_name" content="Vin’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-04-26T19:00:00+07:00" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "Wireless card into monitor mode",
+"datePublished": "2020-04-26T19:00:00+07:00",
+"description": "Check the name of your wireless card by running command:",
+"url": "/wireless-card-into-monitor-mode/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+	<main class="container">
+		<section class="about">
+			<img src="/assets/portfolio.png" alt="Arifin">
+			<h2>Arifin</h2>
+			<p class="tagline">Software Engineer</p>
+			<ul class="social"><a href="https://github.com/vynhart"><li><i class="icon-github-circled"></i></li></a><a href="https://www.linkedin.com/in/vynhart"><li><i class="icon-linkedin-squared"></i></li></a><a href="https://twitter.com/vynhart"><li><i class="icon-twitter-squared"></i></li></a></ul>
+			<p>&copy; 2019</p>
+		</section>
+		<section class="content">
+			<div class="post-container">
+  <a class="post-link" href="/wireless-card-into-monitor-mode/">
+    <h2 class="post-title">Wireless card into monitor mode</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-categories"><li>kali</li></ul>
+    <div class="post-date"><i class="icon-calendar"></i>Apr 26, 2020</div>
+  </div>
+  <div class="post">
+    <p>Check the name of your wireless card by running command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ iwconfig
+</code></pre></div></div>
+
+<p>That command will show you the list of wireless card thats available in your machine, in my case, it’s wlan0.</p>
+
+<p>Then, turn off the wireless card by running the following command, note that you might need to replace <code class="highlighter-rouge">wlan0</code> according
+to the name of your wireless card</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ifconfig wlan0 down
+</code></pre></div></div>
+
+<p>After that, it would be better to kill any process that might interfere when we’re using monitor mode.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ airmon-ng check kill
+</code></pre></div></div>
+
+<p>And change your wireless adapter to be monitor mode by running iwconfig command as follows:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ iwconfig wlan0 mode monitor
+</code></pre></div></div>
+
+<p>After that, turn on your wireless adapter again</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ifconfig wlan0 up
+</code></pre></div></div>
+
+<p>No if you run iwconfig again, you should see the wireless mode would be in monitor</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ iwconfig
+</code></pre></div></div>
+
+  </div></div>
+
+		</section>
+	</main>
+</body>
+</html>
