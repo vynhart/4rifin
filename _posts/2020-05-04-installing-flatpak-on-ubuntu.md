@@ -5,8 +5,6 @@ categories: vim
 date:   2020-05-04 16:00:00 +0700
 permalink: flatpak-install-ubuntu/
 ---
-# Installing Flatpak on Ubuntu 18.04
-
 Flatpak is a universal packaging for linux. It has an app center called [Flathub](https://flathub.org/home) in which you can install many softwares into your linux machine.
 
 To be able to install any software from flathub, you need to install Flatpak first into your machine. Here's how to:
