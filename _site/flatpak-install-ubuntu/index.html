@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-28846418-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-28846418-3');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Merriweather:300|Raleway:400,700" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<title>Installing Flatpak on Ubuntu 18.04</title>
+<!-- Begin Jekyll SEO tag v2.1.0 -->
+<title>Installing Flatpak on Ubuntu 18.04 - Vin’s Blog</title>
+<meta property="og:title" content="Installing Flatpak on Ubuntu 18.04" />
+<meta name="description" content="Installing Flatpak on Ubuntu 18.04" />
+<meta property="og:description" content="Installing Flatpak on Ubuntu 18.04" />
+<link rel="canonical" href="/flatpak-install-ubuntu/" />
+<meta property="og:url" content="/flatpak-install-ubuntu/" />
+<meta property="og:site_name" content="Vin’s Blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-04T16:00:00+07:00" />
+<script type="application/ld+json">
+{"@context": "http://schema.org",
+"@type": "BlogPosting",
+"headline": "Installing Flatpak on Ubuntu 18.04",
+"datePublished": "2020-05-04T16:00:00+07:00",
+"description": "Installing Flatpak on Ubuntu 18.04",
+"url": "/flatpak-install-ubuntu/"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+	<main class="container">
+		<section class="about">
+			<img src="/assets/portfolio.png" alt="Arifin">
+			<h2>Arifin</h2>
+			<p class="tagline">Software Engineer</p>
+			<ul class="social"><a href="https://github.com/vynhart"><li><i class="icon-github-circled"></i></li></a><a href="https://www.linkedin.com/in/vynhart"><li><i class="icon-linkedin-squared"></i></li></a><a href="https://twitter.com/vynhart"><li><i class="icon-twitter-squared"></i></li></a></ul>
+			<p>&copy; 2019</p>
+		</section>
+		<section class="content">
+			<div class="post-container">
+  <a class="post-link" href="/flatpak-install-ubuntu/">
+    <h2 class="post-title">Installing Flatpak on Ubuntu 18.04</h2>
+  </a>
+  <div class="post-meta">
+    <ul class="post-categories"><li>vim</li></ul>
+    <div class="post-date"><i class="icon-calendar"></i>May 4, 2020</div>
+  </div>
+  <div class="post">
+    <h1 id="installing-flatpak-on-ubuntu-1804">Installing Flatpak on Ubuntu 18.04</h1>
+
+<p>Flatpak is a universal packaging for linux. It has an app center called <a href="https://flathub.org/home">Flathub</a> in which you can install many softwares into your linux machine.</p>
+
+<p>To be able to install any software from flathub, you need to install Flatpak first into your machine. Here’s how to:</p>
+
+<h2 id="install-flatpak">Install Flatpak</h2>
+
+<p>To install the latest version of flatpak, add the flatpak ppa repository and then install it:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo add-apt-repository ppa:alexlarsson/flatpak 
+sudo apt update 
+sudo apt install flatpak
+</code></pre></div></div>
+
+<p>Now you should have flatpak installed in your system.</p>
+
+<h2 id="installing-gnome-software-plugin-flatpak">Installing gnome-software-plugin-flatpak</h2>
+
+<p>When you install a new software from flathub, your new software will not automatically have a proper icon in ubuntu desktop launcher. To make this process automatic, you should install gnome plugin for flatpak.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install gnome-software-plugin-flatpak
+</code></pre></div></div>
+
+<p>Now everytime you install a new software from flatpak repository, you should have a corresponding icon in gnome launcher automatically.</p>
+
+<h2 id="add-a-flatpak-repository">Add a flatpak repository</h2>
+<p>The main repository for flatpak applications is <a href="https://flathub.org/home">Flathub</a>. You need to add the repository so you can search and install application that’s published in that repository. Now add flathub into your flatpak repository:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+</code></pre></div></div>
+
+<h2 id="searching-flatpak-apps">Searching flatpak apps.</h2>
+<p>You can search the apps that you need in flathub, click Install and it should bring you to ubuntu software application just like when you install a <code class="highlighter-rouge">.deb</code> package. However it doesn’t works for me, so the alternative way is to use the terminal.</p>
+
+<p>To search for an application in flatpak repository, type this command:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flatpak search &lt;your-query&gt;
+
+// for example
+flatpak search planner
+</code></pre></div></div>
+
+<p>should give you the list of flatpak package containing the word of your query.</p>
+
+<p>After you get the application that you want, you can install it by running:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flatpak install &lt;Application ID&gt;
+</code></pre></div></div>
+
+<p>For example in this case if I want to install Planner I will type:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flatpak install  com.github.alainm23.planner
+</code></pre></div></div>
+
+<p>Flatpak will ask you about several things like permission access and dependency installation, just type yes and you’re good to go. Now you should have a flatpak apps installed in your machine and you should be access it through gnome launcher.</p>
+
+  </div></div>
+
+		</section>
+	</main>
+</body>
+</html>
