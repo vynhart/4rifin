@@ -6,8 +6,6 @@ categories: kriptografi
 permalink: public-key-cryptography-kriptografi-kunci-public/
 ---
 
-![XML Logo](/images/xml-logo.png)
-
 Public Key Cryptography atau uga disebut Assymetric cryptography. adalah sebuah jenis algoritma kriptografi dengan dua kunci yaitu kunci private (yang dirahasiakan) dan kunci publik (yang didistribusikan kepada siapapun yang membutuhkan). Public Key akan digunakan untuk mengenkripsi pesan, dan private key akan digunakan untuk mendekripsi pesan. Istilah Assymetric diambil dari berbedanya kunci untuk mengenkripsi dan mendekripsikan pesan, berbeda dengan kriptografi simetris yang menggunakan kunci yang sama untuk mengenkripsi dan mendekripsi pesan.
 
 Kriptografi kunci publik diciptakan dari permasalahan sulitnya / berbahayanya distribusi kunci yang ada pada jenis kriptografi simetris. Pada kriptografi kunci publik, pemilik kunci private tidak perlu khawatir kunci publik yang digunakan untuk mengenkripsi pesan diketahui oleh siapapun, karena pesan yang telah dienkripsi, tidak akan bisa didekripsi jika tidak menggunakan kunci private yang hanya dimiliki si pembuat kunci. Asumsi pada kriptografi ini adalah kunci private tidak akan bisa (secara komputasi tidak mungkin) ditemukan berdasarkan kunci publik yang didistribusikan sehingga keamanan pesan yang dikirim terjamin sekalipun dalam pengiriman pesan ada man in the middle selama kunci private tidak diketahui oleh orang lain.

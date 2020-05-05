@@ -6,8 +6,6 @@ categories: story
 permalink: geek-camp-indonesia-2015-sedikit-ulasan-dari-peserta/
 ---
 
-![Geek Camp 2015](/images/geek-camp.png)
-
 Sedikit berbagi pengalaman dan pelajaran hasil dari menghadiri Geek Camp Indonesia 2015 yang menghadirkan 20 pembicara dari kalangan pengusaha startup maupun komunitas, berikut sedikit resume, semoga membantu
 
 ## StartUp Engineering Culture. ( By Tommy and Mohan from KMK Labs )

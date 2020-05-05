@@ -6,8 +6,6 @@ categories: story
 permalink: dunia-software-engineer-yang-sesungguhnya/
 ---
 
-![Software World](/images/software-world.jpg)
-
 Oke, sudah cukup lama tidak menulis, semenjak ke jakarta dan Alhamdulillah diberi rezeki untuk bekerja sebagai Software Engineer di Bukalapak.com. Saya ingin sedikit berbagi pengalaman yang mungkin belum seberapa.
 
 Jujur saja, semasa kuliah di USU dulu, saya merasa cukup ‘jago’ dalam hal pemrograman, mengingat pengalaman dalam pembuatan beberapa projek lepas software dari beberapa client yang sampai saat ini dipakai, sampai pengalaman membantu temen-temen ngerjain program skripsi dengan algoritma yang cukup ‘Njelimet’. Well, bukan untuk sombong, tapi saya fikir semasa kuliah, kemampuan programming saya cukup baik.

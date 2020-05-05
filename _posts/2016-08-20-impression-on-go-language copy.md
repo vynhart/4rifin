@@ -6,8 +6,6 @@ date:   2016-08-20 17:52:38 +0700
 permalink: my-impression-on-go-programming-language/
 ---
 
-![Gopher](/images/gopher.jpg)
-
 Before I talk about my Impression to code with Go, let me acclaim that I’ve written code on ruby for a year. So I will talk about Ruby first. And hopefully I can get some comparison between these both of types programming language.
 
 Ruby is a beautiful language, it is so expressive that you almost got no obstacle to write your thought to code. Ruby is an interpreter language, you don’t need to compile the code to run it, it will execute your code line by line without compilation to the whole code. This makes the development phase of software become faster.

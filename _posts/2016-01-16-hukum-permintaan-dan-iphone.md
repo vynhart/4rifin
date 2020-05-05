@@ -6,8 +6,6 @@ categories: opinion
 permalink: hukum-permintaan-law-of-demand-dan-iphone/
 ---
 
-![Dollar](/images/dollar.jpg)
-
 Secara sederhana, di dalam ilmu ekonomi, Hukum Permintaan atau Law of Demand adalah sebuah ‘hukum’ atau ‘perilaku yang dapat ditebak’ tentang hubungan antara permintaan dengan harga. Hukum Permintaan menyatakan bahwa semakin tinggi harga suatu barang, maka permintaan akan semakin rendah, dan semakin rendah harga suatu barang, dengan kondisi yang sama, maka permintaan akan semakin tinggi.
 
 Contohnya adalah jika sebuah semangka memiliki harga 20.000 perbuahnya, mungkin anda tidak tertarik untuk membeli, namun jika harga semangka tersebut diturunkan menjadi 10.000 dengan kualitas dan kuantitas yang sama, anda pasti lebih berminat untuk membelinya, dan semakin banyak orang yang memutuskan untuk membeli.

@@ -6,8 +6,6 @@ categories: story
 permalink: atm-bca-uang-tidak-keluar-saldo-terpotong/
 ---
 
-![Logo Bank BCA](/images/bank_bca.png)
-
 Hari jumat yang lalu saya ambil uang di ATM BCA di tempat biasa. Dan entah bagaimana, uangnya tidak keluar. Awalnya saya pikir saldo saya tidak terpotong karena uangnya tidak keluar, tapi sesampai di rumah, saya cek internet banking, saldo saya sudah terpotong 300 ribu.
 
 Paginya (hari sabtu), saya telepon BCA di 1500888, mengadukan apa yang terjadi kepada customer service bernama Yusi. Saya menyampaikan keluhan saya dan Yusi menanyakan beberapa hal untuk memastikan identitas saya seperti nomor kartu ATM, nama ibu, alamat rumah, dll. Selang beberapa waktu dialog tanya jawab dilakukan, Yusi membuatkan laporan untuk diteruskan ke bagian terkait untuk diproses lebih lanjut. Yusi memohon maaf untuk kesalahan teknis ATM yang terjadi dan mengatakan bahwa laporan ini akan diproses selambat-lambatnya satu minggu namun bisa jadi lebih cepat. Laporan selesai dibuat, telepon ditutup.

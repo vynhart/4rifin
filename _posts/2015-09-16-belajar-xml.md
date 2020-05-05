@@ -6,8 +6,6 @@ categories: technology
 permalink: xml-apa-itu-xml-belajar-xml/
 ---
 
-![XML Logo](/images/xml-logo.png)
-
 Bicara tentang Markup Language, bukan hanya HTML yang merupakan Markup Language, tapi ada juga yang disebut XML (Extended Markup Language) yang juga merupakan seperangkat aturan bahasa untuk menyajikan elemen-elemen pada software. Namun berbeda dengan HTML yang sudah menjadi Standard global di seluruh dunia untuk menyajikan website. XML merupakan aturan yang berbeda bagi setiap developer.
 
 XML (Extensible Markup Language) adalah bahasa markup yang lebih digunakan untuk menyimpan dan mengorganisasi data daripada untuk menjelaskan bagaimana data direpresentasikan seperti HTML.

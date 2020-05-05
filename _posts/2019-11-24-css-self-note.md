@@ -6,8 +6,6 @@ date:   2019-11-24 21:40:00 +0700
 permalink: css-self-note/
 ---
 
-![Gopher](https://cdn.lynda.com/course/504266/504266-636924000532723800-16x9.jpg)
-
 This is my self note about CSS. I write it to my blog so that I can easily access anywhere as long as I got an internet connection. If in any way you find it useful, it would be my pleasure to help.
 
 Building Block
