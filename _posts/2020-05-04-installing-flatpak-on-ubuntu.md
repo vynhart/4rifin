@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Installing Flatpak on Ubuntu 18.04"
-categories: vim
+categories: linux
 date:   2020-05-04 16:00:00 +0700
 permalink: flatpak-install-ubuntu/
 ---

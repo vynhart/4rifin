@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "List USB Devices on Your Linux Machine"
-categories: vim
+categories: linux
 date:   2020-05-07 15:00:00 +0700
 permalink: /list-usb-devices-linux/
 ---
