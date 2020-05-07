@@ -5,8 +5,6 @@ categories: vim
 date:   2020-05-07 15:00:00 +0700
 permalink: /list-usb-devices-linux/
 ---
-# Usage of lsusb
-
 lsusb is a utility for displaying information about USB buses in the system and the devices connected to them
 
 ## List USB devices
