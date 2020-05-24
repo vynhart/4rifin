@@ -5,8 +5,8 @@ commit: build
 	git add .
 	git commit -m 'release'
 
-push: commit
+push:
 	git push origin master
 
-deploy: push
+deploy:
 	bundle exec cap production deploy
