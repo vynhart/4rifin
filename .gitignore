@@ -4,4 +4,4 @@
 Gemfile.lock
 .DS_Store
 log/*
-_site/log/*
+_site/
