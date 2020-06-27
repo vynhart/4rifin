@@ -2,7 +2,7 @@
 lock "~> 3.11.2"
 
 set :application, "4rifin"
-set :repo_url, "https://github.com/vynhart/4rifin.git"
+set :repo_url, "git@github.com:vynhart/4rifin.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
